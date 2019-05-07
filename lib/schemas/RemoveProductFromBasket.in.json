@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "basketId": {
+            "required": true,
+            "type": "string"
+        },
+        "orderItemId": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

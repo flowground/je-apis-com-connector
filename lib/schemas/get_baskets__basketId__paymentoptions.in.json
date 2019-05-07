@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "basketId": {
+            "required": true,
+            "type": "string"
+        },
+        "platform": {
+            "required": false,
+            "type": "string"
+        },
+        "applePay": {
+            "required": false,
+            "type": "boolean",
+            "minimum": 0,
+            "maximum": 0
+        },
+        "androidPay": {
+            "required": false,
+            "type": "boolean",
+            "minimum": 0,
+            "maximum": 0
+        },
+        "googlePay": {
+            "required": false,
+            "type": "boolean",
+            "minimum": 0,
+            "maximum": 0
+        },
+        "voucherCode": {
+            "required": false,
+            "type": "string"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        },
+        "Auth_Token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

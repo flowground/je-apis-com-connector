@@ -1,0 +1,169 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "basketId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "MealParts": {
+                    "description": "IEnumerable[JustEat.PublicApi.Site.Handlers.DTOs.UpdateMealPart]",
+                    "items": {
+                        "properties": {
+                            "GroupId": {
+                                "description": "Int32",
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "Id": {
+                                "description": "Int32",
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "OptionalAccessories": {
+                                "description": "IEnumerable[JustEat.PublicApi.Site.Handlers.DTOs.UpdateOptionalAccessory]",
+                                "items": {
+                                    "properties": {
+                                        "Id": {
+                                            "description": "Int32",
+                                            "format": "int32",
+                                            "type": "integer"
+                                        },
+                                        "Quantity": {
+                                            "description": "Int32",
+                                            "format": "int32",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "Id",
+                                        "Quantity"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "RequiredAccessories": {
+                                "description": "IEnumerable[JustEat.PublicApi.Site.Handlers.DTOs.UpdateRequiredAccessory]",
+                                "items": {
+                                    "properties": {
+                                        "GroupId": {
+                                            "description": "Int32",
+                                            "format": "int32",
+                                            "type": "integer"
+                                        },
+                                        "Id": {
+                                            "description": "Int32",
+                                            "format": "int32",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "Id",
+                                        "GroupId"
+                                    ],
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": [
+                            "Id",
+                            "GroupId"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "OptionalAccessories": {
+                    "description": "IEnumerable[JustEat.PublicApi.Site.Handlers.DTOs.UpdateOptionalAccessory]",
+                    "items": {
+                        "properties": {
+                            "Id": {
+                                "description": "Int32",
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "Quantity": {
+                                "description": "Int32",
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "Id",
+                            "Quantity"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "ProductId": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "RequiredAccessories": {
+                    "description": "IEnumerable[JustEat.PublicApi.Site.Handlers.DTOs.UpdateRequiredAccessory]",
+                    "items": {
+                        "properties": {
+                            "GroupId": {
+                                "description": "Int32",
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "Id": {
+                                "description": "Int32",
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "Id",
+                            "GroupId"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "User": {
+                    "description": "User",
+                    "items": {
+                        "properties": {
+                            "DisplayName": {
+                                "description": "String",
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "DisplayName"
+                        ],
+                        "type": "object"
+                    },
+                    "properties": {
+                        "DisplayName": {
+                            "description": "String",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "DisplayName"
+                    ],
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

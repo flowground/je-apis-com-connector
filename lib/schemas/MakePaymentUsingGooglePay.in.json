@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "orderId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "AsyncNotificationAllowed": {
+                    "description": "Boolean",
+                    "type": "boolean"
+                },
+                "GooglePayToken": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "PaymentServiceProvider": {
+                    "description": "String",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        },
+        "Auth_Token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

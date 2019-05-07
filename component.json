@@ -1,0 +1,1223 @@
+{
+    "title": "Just Eat Tenant API",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/je-apis.com/2.0.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://public.je-apis.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "GetOnlineStatus": {
+            "main": "./lib/actions/GetOnlineStatus.js",
+            "title": "Gets the status",
+            "description": "Uri template /application/onlinestatus",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetOnlineStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetVersionAndStatus": {
+            "main": "./lib/actions/GetVersionAndStatus.js",
+            "title": "Gets the application version and status",
+            "description": "Uri template /application/{applicationId}/versionstatus/{versionId}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetVersionAndStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetApplicationVersion": {
+            "main": "./lib/actions/GetApplicationVersion.js",
+            "title": "Gets the application version [Obsolete (As verified by Android/Ios on 23-02-2016)]",
+            "description": "Uri template /application/{applicationId}/versionupdate/{versionId}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetApplicationVersion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateBasket": {
+            "main": "./lib/actions/CreateBasket.js",
+            "title": "Creates a Basket",
+            "description": "Uri template /baskets",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateBasket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetBasket": {
+            "main": "./lib/actions/GetBasket.js",
+            "title": "Gets a Basket",
+            "description": "Uri template /baskets/{basketId}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetBasket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SetOrderContactDetails": {
+            "main": "./lib/actions/SetOrderContactDetails.js",
+            "title": "Set order contact details",
+            "description": "Uri template /baskets/{basketId}/contactdetails/",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SetOrderContactDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SetRequestedFulfilmentTime": {
+            "main": "./lib/actions/SetRequestedFulfilmentTime.js",
+            "title": "Set preferred order fulfilment time. We're expecting the time to be one of the choices that you got back from the GET, unadjusted for timezone.",
+            "description": "Uri template /baskets/{basketId}/fulfilmenttime?time={time}&asap={asap}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SetRequestedFulfilmentTime.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetFulfilmentTimeslots": {
+            "main": "./lib/actions/GetFulfilmentTimeslots.js",
+            "title": "Get available fulfilment times for basket",
+            "description": "Uri template /baskets/{basketId}/fulfilmenttimeslots/",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetFulfilmentTimeslots.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SetOrderNotes": {
+            "main": "./lib/actions/SetOrderNotes.js",
+            "title": "***STUB*** Set order notes",
+            "description": "Uri template /baskets/{basketId}/notes",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SetOrderNotes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "AddProductToBasket": {
+            "main": "./lib/actions/AddProductToBasket.js",
+            "title": "Add products into a given basket",
+            "description": "Uri template /baskets/{basketId}/orderitems",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/AddProductToBasket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "RemoveProductFromBasket": {
+            "main": "./lib/actions/RemoveProductFromBasket.js",
+            "title": "Remove products from a given basket",
+            "description": "Uri template /baskets/{basketId}/orderitems/{orderItemId}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/RemoveProductFromBasket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateProductsMealParts": {
+            "main": "./lib/actions/UpdateProductsMealParts.js",
+            "title": "Add meal parts into a given product inside a given basket",
+            "description": "Uri template /baskets/{basketId}/orderitems/{orderItemId}/mealparts",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateProductsMealParts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateProductsOptionalAccessories": {
+            "main": "./lib/actions/UpdateProductsOptionalAccessories.js",
+            "title": "Add optional accessories into a given product inside a given basket",
+            "description": "Uri template /baskets/{basketId}/orderitems/{orderItemId}/optionalaccessories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateProductsOptionalAccessories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateProductsRequiredAccessories": {
+            "main": "./lib/actions/UpdateProductsRequiredAccessories.js",
+            "title": "Add required accessories into a given product inside a given basket",
+            "description": "Uri template /baskets/{basketId}/orderitems/{orderItemId}/requiredaccessories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateProductsRequiredAccessories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_baskets__basketId__paymentoptions": {
+            "main": "./lib/actions/get_baskets__basketId__paymentoptions.js",
+            "title": "Get payment options for a basket",
+            "description": "Uri template /baskets/{basketId}/paymentoptions?applePay={applePay}&androidPay={androidPay}&googlePay={googlePay}&platform={platform}&voucherCode={voucherCode}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_baskets__basketId__paymentoptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateBasketServiceOptions": {
+            "main": "./lib/actions/UpdateBasketServiceOptions.js",
+            "title": "Change service options for Basket",
+            "description": "Uri template /baskets/{basketId}/serviceoptions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateBasketServiceOptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateBasket": {
+            "main": "./lib/actions/UpdateBasket.js",
+            "title": "Updates a user of a basket",
+            "description": "Uri template /baskets/{basketId}/user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateBasket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateZipCode": {
+            "main": "./lib/actions/UpdateZipCode.js",
+            "title": "Update zipcode from a given basket",
+            "description": "Uri template /baskets/{basketId}/zipcode",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateZipCode.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetConsumerDetails": {
+            "main": "./lib/actions/GetConsumerDetails.js",
+            "title": "Gets a consumer via either Basic Authorization/Auth-Token or a Bearer token",
+            "description": "Uri template /consumer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetConsumerDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateConsumer": {
+            "main": "./lib/actions/UpdateConsumer.js",
+            "title": "Updates a consumer",
+            "description": "Uri template /consumer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateConsumer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateConsumer": {
+            "main": "./lib/actions/CreateConsumer.js",
+            "title": "Creates a consumer",
+            "description": "Uri template /consumer",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateConsumer.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetConsumerAddresses": {
+            "main": "./lib/actions/GetConsumerAddresses.js",
+            "title": "Gets a consumers addresses by the Auth-Token header",
+            "description": "Uri template /consumer/addresses",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetConsumerAddresses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeActivateDeviceToken": {
+            "main": "./lib/actions/DeActivateDeviceToken.js",
+            "title": "Delete a device token for a consumer",
+            "description": "Uri template /consumer/devicetokens",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeActivateDeviceToken.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ActivateDeviceToken": {
+            "main": "./lib/actions/ActivateDeviceToken.js",
+            "title": "Activate a device token for a consumer",
+            "description": "Uri template /consumer/devicetokens",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ActivateDeviceToken.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetInFlightOrderStatuses": {
+            "main": "./lib/actions/GetInFlightOrderStatuses.js",
+            "title": "Returns statuses for InFlight orders for a given consumer",
+            "description": "Uri template /consumer/inflight-order-status<br/><br/>Accept-Version:1 StatusNames: <br/>['AwaitingPayment' or 'Processing' or 'Completed' or 'Canceled' or 'Declined' or 'Accepted' or 'OnItsWay' or 'DueDateChanged']<br/><br/>Accept-Version:2 StatusNames: <br/>['DueDateDelayed']<br/><br/>Accept-Version:3 StatusNames: <br/>['OrderReady']<br/><br/>Accept-Version:4 StatusNames: <br/>['PreOrderPending']",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetInFlightOrderStatuses.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetOrderHistory": {
+            "main": "./lib/actions/GetOrderHistory.js",
+            "title": "Return order history by Auth-Token",
+            "description": "Uri template /consumer/order-history?page={page}&pageSize={pageSize}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetOrderHistory.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateConsumerPassword": {
+            "main": "./lib/actions/UpdateConsumerPassword.js",
+            "title": "Changes a consumer password and logs in",
+            "description": "Uri template /consumer/password",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateConsumerPassword.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetConsumerPreferences": {
+            "main": "./lib/actions/GetConsumerPreferences.js",
+            "title": "Get a consumers preferences by the Auth-Token header",
+            "description": "Uri template /consumer/preferences",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetConsumerPreferences.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SetConsumerPreferences": {
+            "main": "./lib/actions/SetConsumerPreferences.js",
+            "title": "Update a consumers preferences by the Auth-Token header",
+            "description": "Uri template /consumer/preferences",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SetConsumerPreferences.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_consumer_serviceable_addresses_restaurant__restaurantId_": {
+            "main": "./lib/actions/get_consumer_serviceable_addresses_restaurant__restaurantId_.js",
+            "title": "Returns the consumers serviceable addresses based the Auth-Token and the TR id",
+            "description": "Uri template /consumer/serviceable-addresses/restaurant/{restaurantId}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_consumer_serviceable_addresses_restaurant__restaurantId_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_consumer_serviceable_addresses_restaurant__restaurantId___maxAmount_": {
+            "main": "./lib/actions/get_consumer_serviceable_addresses_restaurant__restaurantId___maxAmount_.js",
+            "title": "Returns the consumers serviceable addresses based the Auth-Token and the TR id",
+            "description": "Uri template /consumer/serviceable-addresses/restaurant/{restaurantId}/{maxAmount}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_consumer_serviceable_addresses_restaurant__restaurantId___maxAmount_.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetCustomisation": {
+            "main": "./lib/actions/GetCustomisation.js",
+            "title": "Get customisation info for Consumer Help",
+            "description": "Uri template /consumerhelp/customisation?orderid={orderid}&requestcontext={requestcontext}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetCustomisation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetFlowStep1": {
+            "main": "./lib/actions/GetFlowStep1.js",
+            "title": "Get the next flow step in a Consumer Help flow",
+            "description": "Uri template /consumerhelp/flows/{flow}/{orderId}/{action}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetFlowStep1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PostFlowStep1": {
+            "main": "./lib/actions/PostFlowStep1.js",
+            "title": "Post to a Consumer Help flow and get the next step",
+            "description": "Uri template /consumerhelp/flows/{flow}/{orderId}/{action}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PostFlowStep1.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetFlowStep2": {
+            "main": "./lib/actions/GetFlowStep2.js",
+            "title": "Get the next flow step in a Consumer Help flow; extra URL segment",
+            "description": "Uri template /consumerhelp/flows/{flow}/{orderId}/{action}/{subaction}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetFlowStep2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PostFlowStep2": {
+            "main": "./lib/actions/PostFlowStep2.js",
+            "title": "Post to a Consumer Help flow and get the next step; extra URL segment",
+            "description": "Uri template /consumerhelp/flows/{flow}/{orderId}/{action}/{subaction}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PostFlowStep2.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetCountries": {
+            "main": "./lib/actions/GetCountries.js",
+            "title": "Get all country codes - response is an array of strings",
+            "description": "Uri template /countries",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetCountries.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetActiveExperiments": {
+            "main": "./lib/actions/GetActiveExperiments.js",
+            "title": "Get active experiments",
+            "description": "Uri template /experiments/active",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetActiveExperiments.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_health_check": {
+            "main": "./lib/actions/get_health_check.js",
+            "title": "HealthHandler.Check",
+            "description": "Uri template /health/check",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_health_check.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_health_validate": {
+            "main": "./lib/actions/get_health_validate.js",
+            "title": "HealthHandler.Check",
+            "description": "Uri template /health/validate",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_health_validate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Put": {
+            "main": "./lib/actions/Put.js",
+            "title": "Testing validation",
+            "description": "Uri template /internal/for-testing/{basketId}/contactdetails/",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Put.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetHealth": {
+            "main": "./lib/actions/GetHealth.js",
+            "title": "Runs all known health checks - response is array of HealthCheckResult",
+            "description": "Uri template /internal/health/all",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetHealth.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateLoginToken": {
+            "main": "./lib/actions/CreateLoginToken.js",
+            "title": "Login a user and return an Auth-Token",
+            "description": "Uri template /logins",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateLoginToken.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetDeliveryAreas": {
+            "main": "./lib/actions/GetDeliveryAreas.js",
+            "title": "Gets delivery areas from a given menu",
+            "description": "Uri template /menus/{menuId}/deliveryareas",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetDeliveryAreas.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetCategoriesForMenu": {
+            "main": "./lib/actions/GetCategoriesForMenu.js",
+            "title": "Gets categories for a given menu",
+            "description": "Uri template /menus/{menuId}/productcategories",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetCategoriesForMenu.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetProducts": {
+            "main": "./lib/actions/GetProducts.js",
+            "title": "Gets all products from a given category",
+            "description": "Uri template /menus/{menuId}/productcategories/{categoryId}/products",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetProducts.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateOrderFromBasket": {
+            "main": "./lib/actions/CreateOrderFromBasket.js",
+            "title": "Create an Order from a Basket",
+            "description": "SuccessState values are: Unknown = 0, Successful, InvalidBasket, BasketNotOrderable, PotentialDuplicate, BasketDoesNotExist, BasketTooBig, InvalidContactDetails, GuestAccountCannotBeCreated, InvalidAuthToken",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateOrderFromBasket.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetOrderDetails": {
+            "main": "./lib/actions/GetOrderDetails.js",
+            "title": "Gets an order by OrderId",
+            "description": "Uri template /orders/{orderId}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetOrderDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetOrderGivenAway": {
+            "main": "./lib/actions/GetOrderGivenAway.js",
+            "title": "Get campaign content details of orders that have been given away",
+            "description": "Uri template /orders/{orderId}/campaigncontent",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetOrderGivenAway.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orders__orderId__pay_accountcredit": {
+            "main": "./lib/actions/post_orders__orderId__pay_accountcredit.js",
+            "title": "Pay for an order using account credit",
+            "description": "Uri template /orders/{orderId}/pay/accountcredit",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orders__orderId__pay_accountcredit.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MakePaymentUsingAndroidPay": {
+            "main": "./lib/actions/MakePaymentUsingAndroidPay.js",
+            "title": "Pay using Android Pay",
+            "description": "Uri template /orders/{orderId}/pay/android/",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MakePaymentUsingAndroidPay.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MakePaymentUsingApplePay": {
+            "main": "./lib/actions/MakePaymentUsingApplePay.js",
+            "title": "Pay using Apple Pay",
+            "description": "Uri template /orders/{orderId}/pay/apple/",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MakePaymentUsingApplePay.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orders__orderId__pay_cash": {
+            "main": "./lib/actions/post_orders__orderId__pay_cash.js",
+            "title": "Pay for an order using cash",
+            "description": "Uri template /orders/{orderId}/pay/cash",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orders__orderId__pay_cash.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "MakePaymentUsingGooglePay": {
+            "main": "./lib/actions/MakePaymentUsingGooglePay.js",
+            "title": "Pay using Google Pay",
+            "description": "Uri template /orders/{orderId}/pay/google/",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/MakePaymentUsingGooglePay.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "post_orders__orderId__pay_savedcard": {
+            "main": "./lib/actions/post_orders__orderId__pay_savedcard.js",
+            "title": "Pay for an order using a saved card",
+            "description": "Uri template /orders/{orderId}/pay/savedcard",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/post_orders__orderId__pay_savedcard.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetOrderPaymentStatus": {
+            "main": "./lib/actions/GetOrderPaymentStatus.js",
+            "title": "Gets the current status of the payment for an order",
+            "description": "Uri template /orders/{orderId}/payment/status/",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetOrderPaymentStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "get_orders__orderId__paymentoptions": {
+            "main": "./lib/actions/get_orders__orderId__paymentoptions.js",
+            "title": "Get payment options for an order",
+            "description": "Uri template /orders/{orderId}/paymentoptions?applePay={applePay}&androidPay={androidPay}&googlePay={googlePay}&platform={platform}&voucherCode={voucherCode}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/get_orders__orderId__paymentoptions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateBasketFromOrder": {
+            "main": "./lib/actions/CreateBasketFromOrder.js",
+            "title": "Creates a new basket from a previous order",
+            "description": "Uri template /orders/{orderId}/reorder",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateBasketFromOrder.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "PostReview": {
+            "main": "./lib/actions/PostReview.js",
+            "title": "Submits a user review for a given order",
+            "description": "Uri template /ratings",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/PostReview.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateResetToken": {
+            "main": "./lib/actions/CreateResetToken.js",
+            "title": "Creates a reset password token, initiates sending an email to the consumer with a link to reset their password. Device type will currently allow for customisation of email links; include if the calling device requires custom templates.",
+            "description": "Uri template /reset-password-tokens",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateResetToken.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetRestaurantsByFreeText": {
+            "main": "./lib/actions/GetRestaurantsByFreeText.js",
+            "title": "Search restaurants by free text",
+            "description": "Uri template /restaurants?freetext={freeText}&cuisine={cuisine}&name={restaurantName}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetRestaurantsByFreeText.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetAvailableBadges": {
+            "main": "./lib/actions/GetAvailableBadges.js",
+            "title": "Gets available badges",
+            "description": "Uri template restaurants/available_badges",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetAvailableBadges.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "SearchVersion3": {
+            "main": "./lib/actions/SearchVersion3.js",
+            "title": "Search V3 restaurants by postcode and/or cuisine type, version header kept for backwards compatibility",
+            "description": "Uri template /restaurants/v3?q={postCode}&c={cuisine}&name={restaurantName}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/SearchVersion3.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetRestaurantDetails": {
+            "main": "./lib/actions/GetRestaurantDetails.js",
+            "title": "Gets restaurant details",
+            "description": "Uri template /restaurants/{restaurantId}/details",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetRestaurantDetails.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetMenus": {
+            "main": "./lib/actions/GetMenus.js",
+            "title": "Gets menus of a restaurant",
+            "description": "Uri template /restaurants/{restaurantId}/menus?delivery={delivery}&current={current}&postcode={postcode}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetMenus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetAvailableMenus": {
+            "main": "./lib/actions/GetAvailableMenus.js",
+            "title": "Gets all available menus for a given restaurant and time",
+            "description": "Uri template /restaurants/{restaurantId}/menus/available?time={utcTime}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetAvailableMenus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetProductCategories": {
+            "main": "./lib/actions/GetProductCategories.js",
+            "title": "Gets all product categories for a given restaurant",
+            "description": "Uri template /restaurants/{restaurantId}/productcategories?type={serviceType}&time={utcTime}&zipcode={zipcode}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetProductCategories.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetRestaurantReviews": {
+            "main": "./lib/actions/GetRestaurantReviews.js",
+            "title": "Get paged list of reviews for a given restaurant",
+            "description": "Uri template /restaurants/{restaurantId}/reviews?p={pageNumber}&s={pageSize}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetRestaurantReviews.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetLatestTermsAndConditions": {
+            "main": "./lib/actions/GetLatestTermsAndConditions.js",
+            "title": "Gets the latest terms and conditions",
+            "description": "Uri template /terms",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetLatestTermsAndConditions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetZipCodeAutoCompleteSuggestions": {
+            "main": "./lib/actions/GetZipCodeAutoCompleteSuggestions.js",
+            "title": "Gets zipcode autocomplete suggestions",
+            "description": "Uri template /zipcodeautocomplete?term={term}&resultsCount={resultsCount}",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetZipCodeAutoCompleteSuggestions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

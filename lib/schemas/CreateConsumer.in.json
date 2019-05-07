@@ -1,0 +1,120 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "AccountType": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "AddressRequest": {
+                    "description": "ConsumerAddressCreateRequest",
+                    "properties": {
+                        "AddressName": {
+                            "description": "String",
+                            "type": "string"
+                        },
+                        "City": {
+                            "description": "String",
+                            "type": "string"
+                        },
+                        "Line1": {
+                            "description": "String",
+                            "type": "string"
+                        },
+                        "Line2": {
+                            "description": "String",
+                            "type": "string"
+                        },
+                        "Line3": {
+                            "description": "String",
+                            "type": "string"
+                        },
+                        "ZipCode": {
+                            "description": "String",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "Line1",
+                        "City",
+                        "ZipCode",
+                        "AddressName"
+                    ],
+                    "type": "object"
+                },
+                "DateOfBirth": {
+                    "description": "DateTime",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "DeviceId": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceName": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceToken": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceType": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "FirstName": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "LastName": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "Password": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "PhoneNumber": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "TermsAndConditionsId": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "WantsNewsletter": {
+                    "description": "Boolean",
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "Password",
+                "DeviceId",
+                "DeviceName",
+                "DeviceType",
+                "EmailAddress",
+                "FirstName",
+                "LastName",
+                "TermsAndConditionsId"
+            ],
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

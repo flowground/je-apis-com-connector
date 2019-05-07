@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "restaurantId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0,
+            "maximum": 0
+        },
+        "utcTime": {
+            "required": false,
+            "type": "string"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

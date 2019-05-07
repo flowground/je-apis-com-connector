@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

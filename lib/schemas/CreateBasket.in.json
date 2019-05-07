@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "MenuId": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Postcode": {
+                    "description": "String",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "MenuId"
+            ],
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

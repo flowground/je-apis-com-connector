@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "restaurantId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0,
+            "maximum": 0
+        },
+        "serviceType": {
+            "required": false,
+            "type": "string"
+        },
+        "utcTime": {
+            "required": false,
+            "type": "string"
+        },
+        "zipcode": {
+            "required": false,
+            "type": "string"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept_Version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

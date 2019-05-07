@@ -1,0 +1,51 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "DeviceId": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceName": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceToken": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceType": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "Password": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "Username": {
+                    "description": "String",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "Username",
+                "Password",
+                "DeviceId",
+                "DeviceName",
+                "DeviceType"
+            ],
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

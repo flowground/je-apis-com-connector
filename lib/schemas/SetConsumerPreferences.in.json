@@ -1,0 +1,80 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "DeviceToken": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceType": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "PhoneNumber": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "PreferenceVersionViewed": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Preferences": {
+                    "description": "IEnumerable[JE.Api.Consumer.DTOs.ConsumerPreference]",
+                    "items": {
+                        "properties": {
+                            "Email": {
+                                "description": "Boolean",
+                                "type": "boolean"
+                            },
+                            "Key": {
+                                "description": "String",
+                                "type": "string"
+                            },
+                            "Push": {
+                                "description": "Boolean",
+                                "type": "boolean"
+                            },
+                            "Sms": {
+                                "description": "Boolean",
+                                "type": "boolean"
+                            }
+                        },
+                        "required": [
+                            "Key",
+                            "Push",
+                            "Email",
+                            "Sms"
+                        ],
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "required": [
+                "Preferences",
+                "PreferenceVersionViewed"
+            ],
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        },
+        "Auth_Token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

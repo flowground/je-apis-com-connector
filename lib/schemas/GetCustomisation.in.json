@@ -1,0 +1,21 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "orderId": {
+            "required": false,
+            "type": "string"
+        },
+        "requestContext": {
+            "required": false,
+            "type": "string"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

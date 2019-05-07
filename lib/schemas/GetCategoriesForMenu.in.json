@@ -1,0 +1,20 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "menuId": {
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "minimum": 0,
+            "maximum": 0
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

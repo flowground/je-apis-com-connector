@@ -1,0 +1,47 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "CustomerComments": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "Delivery": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "OrderId": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "Quality": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "Service": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        },
+        "Auth_Token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

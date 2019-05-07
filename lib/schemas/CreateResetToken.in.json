@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "DeviceType": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "EmailAddress": {
+                    "description": "String",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "EmailAddress"
+            ],
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

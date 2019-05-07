@@ -1,0 +1,25 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "freeText": {
+            "required": false,
+            "type": "string"
+        },
+        "cuisine": {
+            "required": false,
+            "type": "string"
+        },
+        "restaurantName": {
+            "required": false,
+            "type": "string"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

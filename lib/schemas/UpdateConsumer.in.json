@@ -1,0 +1,33 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "TermsAndConditionsId": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "WantsNewsletter": {
+                    "description": "Boolean",
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        },
+        "Auth_Token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "postCode": {
+            "required": false,
+            "type": "string"
+        },
+        "cuisine": {
+            "required": false,
+            "type": "string"
+        },
+        "restaurantName": {
+            "required": false,
+            "type": "string"
+        },
+        "UseSearchOrchestrator": {
+            "required": false,
+            "type": "boolean",
+            "minimum": 0,
+            "maximum": 0
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        },
+        "Accept_Version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

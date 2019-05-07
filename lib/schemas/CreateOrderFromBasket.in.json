@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "properties": {
+        "Authorization": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "maximum": 0,
+            "minimum": 0,
+            "properties": {
+                "ApplicationId": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "ApplicationVersion": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "BasketId": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceId": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceName": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceToken": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "DeviceType": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "OrderNotes": {
+                    "description": "String",
+                    "type": "string"
+                },
+                "TermsAndConditionsId": {
+                    "description": "Int32",
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "BasketId",
+                "ApplicationVersion",
+                "DeviceId",
+                "DeviceName",
+                "DeviceType",
+                "TermsAndConditionsId"
+            ],
+            "type": "object"
+        },
+        "Accept_Tenant": {
+            "required": true,
+            "type": "string"
+        },
+        "Auth_Token": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
